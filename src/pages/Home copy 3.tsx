@@ -56,57 +56,48 @@ const Home: React.FC = () => {
     <>
       <IonHeader translucent={true}>
         <IonToolbar>
-          <IonTitle>Final Project</IonTitle>
+          <IonTitle>Header</IonTitle>
         </IonToolbar>
       </IonHeader>
       <div className="container">
         <IonContent fullscreen={true} className="ion-padding">
+          
+       
           <IonGrid>
           <h1>MEGASIA</h1>
           <p>Produk - produk UMKM Indonesia</p>
           <IonRow>
               {products.map((product) => (
               <IonCol size="4" key={product.id}>
-                
-              <div style={{ maxWidth: '350px' }}>
-              <IonCard>
-              <img className="card-img-top" src={cdnLink + product.thumbnail} alt={product.name}  width={400}/>
-             
-                  <IonCardHeader>
-                  <div
-                    style={{
-                      width: '90px',
-                      height: '30px',
-                      backgroundColor: 'orange',
-                      borderRadius: '6px', // Untuk sudut yang melengkung
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      textTransform: 'lowercase',
-                      cursor: 'pointer',
-                      color: 'white',
-                      fontWeight: 'bold',                    }}
-                  >
-                    {product.label}
+                {/* Use "size" property to specify the width of the column */}
+                <div className="row">
+                  {/* Content 1 */}
+                  <div style={{ maxWidth: '400px' }}>
+                    <h2>{product.name}</h2>
+                    <img className="card-img-top" src={cdnLink + product.thumbnail} alt={product.name} />
+
+                    <h3>{product.description}</h3>
+                    <p>By : <a>{product.author}</a> | Lokasi : {product.location}</p>
                   </div>
-
-                  <IonCardTitle style={{ fontWeight: 'bold' }}>{product.name}</IonCardTitle>
-                    <IonCardSubtitle>By : <span style={{ fontWeight: 'bold' }}>{product.owner}</span> | Lokasi :
-                    <span style={{ fontWeight: 'bold' }}>{product.location}</span>
-                     </IonCardSubtitle>
-                  </IonCardHeader>
-                <IonCardContent>{product.description}</IonCardContent>
-                </IonCard>
-              </div>
+                </div>
               </IonCol>
-
             ))}
 
-            
-              </IonRow>
+<div style={{ maxWidth: '350px' }}>
+    <IonCard>
+      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      <IonCardHeader>
+        <IonCardTitle>Card Title</IonCardTitle>
+        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+      </IonCardHeader>
 
-                </IonGrid>
-          </IonContent>
+      <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+    </IonCard>
+      </div>
+          </IonRow>
+
+          </IonGrid>
+        </IonContent>
         </div>
     </>
   );
