@@ -1,0 +1,7 @@
+{
+  "name": "megasia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
